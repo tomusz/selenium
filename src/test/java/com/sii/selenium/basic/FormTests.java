@@ -18,7 +18,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class FormTests extends BaseTest {
 
-    private final String formWebPageUrl = baseUrl + webAddresses.get("formPractice");
+    private final String formWebPageUrl = baseUrl + webAddresses.get("basic.form");
 
     @Test
     @Tag(TestTagConstants.FORMS)

@@ -15,7 +15,7 @@ import java.util.List;
 
 public class WindowsAndTabsTests extends BaseTest {
 
-    private final String windowsWebPageUrl = baseUrl + webAddresses.get("widowsAndTabs");
+    private final String windowsWebPageUrl = baseUrl + webAddresses.get("basic.widowsAndTabs");
     private final int REQUIRED_MOUNTAIN_HEIGHT = 4000;
 
     @Test

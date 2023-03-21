@@ -11,8 +11,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class IFramesTests extends BaseTest {
 
-    private final String iFrameWebPageUrl = baseUrl + webAddresses.get("iframe");
-    private final String iFrameDemoQAWebPageUrl = webAddresses.get("iframe.other").toString();
+    private final String iFrameWebPageUrl = baseUrl + webAddresses.get("basic.iframe");
+    private final String iFrameDemoQAWebPageUrl = webAddresses.get("demoqa.iframe").toString();
     private final Runnable fillFormInFirstFrame = () -> {
         //logic for filling form 1
         //will be implemented when page is up

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class TablesTests extends BaseTest {
 
-    private final String tablesWebPageUrl = baseUrl + webAddresses.get("table");
+    private final String tablesWebPageUrl = baseUrl + webAddresses.get("basic.table");
     private final int REQUIRED_MOUNTAIN_HEIGHT = 4000;
 
     @Test

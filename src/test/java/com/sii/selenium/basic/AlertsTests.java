@@ -13,7 +13,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class AlertsTests extends BaseTest {
 
-    private final String alertWebPageUrl = baseUrl + webAddresses.get("alertsPractice");
+    private final String alertWebPageUrl = baseUrl + webAddresses.get("basic.alerts");
 
 
     @Test
