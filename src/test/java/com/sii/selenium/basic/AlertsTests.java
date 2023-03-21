@@ -1,8 +1,8 @@
 package com.sii.selenium.basic;
 
 import com.sii.selenium.BaseTest;
-import com.sii.selenium.TestTagConstants;
-import com.sii.selenium.WebPageUtils;
+import com.sii.selenium.constants.TestTagConstants;
+import com.sii.selenium.utils.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package com.sii.selenium;
+package com.sii.selenium.constants;
 
 public class TestTagConstants {
 

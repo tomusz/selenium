@@ -1,4 +1,4 @@
-package com.sii.selenium;
+package com.sii.selenium.utils;
 
 import org.openqa.selenium.WebDriver;
 

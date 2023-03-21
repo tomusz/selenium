@@ -1,11 +1,11 @@
-package com.sii.selenium;
+package com.sii.selenium.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static com.sii.selenium.TestHeaderConstants.*;
+import static com.sii.selenium.constants.TestHeaderConstants.*;
 
 public class TablesUtils {
 
