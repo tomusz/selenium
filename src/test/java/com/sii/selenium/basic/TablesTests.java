@@ -1,19 +1,29 @@
 package com.sii.selenium.basic;
 
 import com.sii.selenium.BaseTest;
-import com.sii.selenium.TestConstants;
+import com.sii.selenium.TablesUtils;
+import com.sii.selenium.TestTagConstants;
+import com.sii.selenium.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class TablesTests extends BaseTest {
 
     private final String tablesWebPageUrl = baseUrl + webAddresses.get("table");
+    private final int REQUIRED_MOUNTAIN_HEIGHT = 4000;
 
     @Test
-    @Tag(TestConstants.TABLES)
+    @Tag(TestTagConstants.TABLES)
     @Tag("FAKE-JIRA-NO-0009")
     public void getRows() {
-        //•Get all rows from table to List
-        //•Print out 'Rank', 'Peak' and 'Mountain range' of mountains that are in "Switzerland" and are higher than 4000 m
+        driver.get(tablesWebPageUrl);
+        WebPageUtils.maximiseWindow.accept(driver);
+
+        List<WebElement> rowsWithSwitzerland = driver.findElements(By.xpath("//tr/td[contains(.,'Switzerland')]/.."));
+        TablesUtils.printRowsWithHeightMoreThan(rowsWithSwitzerland, REQUIRED_MOUNTAIN_HEIGHT);
     }
 }

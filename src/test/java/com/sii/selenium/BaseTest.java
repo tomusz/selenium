@@ -7,9 +7,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
@@ -35,6 +35,8 @@ public class BaseTest {
 
     @BeforeEach
     void setupDriver() {
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions().addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(options);
+//        driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
     }
 }

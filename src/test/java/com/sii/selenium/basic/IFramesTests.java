@@ -1,7 +1,7 @@
 package com.sii.selenium.basic;
 
 import com.sii.selenium.BaseTest;
-import com.sii.selenium.TestConstants;
+import com.sii.selenium.TestTagConstants;
 import com.sii.selenium.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -13,22 +13,22 @@ public class IFramesTests extends BaseTest {
 
     private final String iFrameWebPageUrl = baseUrl + webAddresses.get("iframe");
     private final String iFrameDemoQAWebPageUrl = "https://demoqa.com/frames";
-    private Runnable fillFormInFirstFrame = () -> {
+    private final Runnable fillFormInFirstFrame = () -> {
         //logic for filling form 1
         //will be implemented when page is up
     };
-    private Runnable fillFormInSecondFrame = () -> {
+    private final Runnable fillFormInSecondFrame = () -> {
         //logic for filling form 2
         //will be implemented when page is up
     };
-    private Runnable validateText = () -> {
+    private final Runnable validateText = () -> {
         String actualIFrameText = driver.findElement(By.cssSelector("h1")).getText();
         String expectedIFrameText = "This is a sample page";
         assertThat(actualIFrameText).isEqualTo(expectedIFrameText);
     };
 
     @Test
-    @Tag(TestConstants.I_FRAMES)
+    @Tag(TestTagConstants.I_FRAMES)
     @Tag("FAKE-JIRA-NO-0007")
     public void moveAround() {
         driver.get(iFrameWebPageUrl);
@@ -41,7 +41,7 @@ public class IFramesTests extends BaseTest {
     }
 
     @Test
-    @Tag(TestConstants.I_FRAMES)
+    @Tag(TestTagConstants.I_FRAMES)
     @Tag("FAKE-JIRA-NO-0008")
     public void moveAroundDemoQA() {
         driver.get(iFrameDemoQAWebPageUrl);

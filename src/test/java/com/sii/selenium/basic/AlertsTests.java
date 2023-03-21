@@ -1,7 +1,7 @@
 package com.sii.selenium.basic;
 
 import com.sii.selenium.BaseTest;
-import com.sii.selenium.TestConstants;
+import com.sii.selenium.TestTagConstants;
 import com.sii.selenium.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ public class AlertsTests extends BaseTest {
 
 
     @Test
-    @Tag(TestConstants.ALERTS)
+    @Tag(TestTagConstants.ALERTS)
     @Tag("FAKE-JIRA-NO-0001")
     public void getSimpleAlertText() {
         driver.get(alertWebPageUrl);
@@ -31,7 +31,7 @@ public class AlertsTests extends BaseTest {
     }
 
     @Test
-    @Tag(TestConstants.ALERTS)
+    @Tag(TestTagConstants.ALERTS)
     @Tag("FAKE-JIRA-NO-0002")
     public void getSimpleAlertLabel() {
         driver.get(alertWebPageUrl);
@@ -46,7 +46,7 @@ public class AlertsTests extends BaseTest {
     }
 
     @Test
-    @Tag(TestConstants.ALERTS)
+    @Tag(TestTagConstants.ALERTS)
     @Tag("FAKE-JIRA-NO-0003")
     public void getPromptAlertLabel() {
         final String testName = "Lord Vader";
@@ -63,7 +63,7 @@ public class AlertsTests extends BaseTest {
     }
 
     @Test
-    @Tag(TestConstants.ALERTS)
+    @Tag(TestTagConstants.ALERTS)
     @Tag("FAKE-JIRA-NO-0004")
     public void getConfirmAlertLabel() {
         final By confirmAlertBy = By.cssSelector("#confirm-alert");
@@ -87,7 +87,7 @@ public class AlertsTests extends BaseTest {
     }
 
     @Test
-    @Tag(TestConstants.ALERTS)
+    @Tag(TestTagConstants.ALERTS)
     @Tag("FAKE-JIRA-NO-0005")
     public void getDelayedAlertLabel() {
         driver.get(alertWebPageUrl);

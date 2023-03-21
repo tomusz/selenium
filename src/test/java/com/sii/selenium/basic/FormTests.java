@@ -1,14 +1,14 @@
 package com.sii.selenium.basic;
 
 import com.sii.selenium.BaseTest;
-import com.sii.selenium.TestConstants;
+import com.sii.selenium.TestTagConstants;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class FormTests extends BaseTest {
 
     @Test
-    @Tag(TestConstants.FORMS)
+    @Tag(TestTagConstants.FORMS)
     @Tag("FAKE-JIRA-NO-0006")
     public void fillInForm() {
         //first name
