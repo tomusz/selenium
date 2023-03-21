@@ -9,11 +9,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
     protected WebDriver driver;
     protected Properties webAddresses = PropertiesProvider.getWebAddresses();
+
+    protected String baseUrl = webAddresses.get("baseUrl").toString();
+
+    protected static final int WAIT_TIME = 10;
 
     public BaseTest() {
     }
