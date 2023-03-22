@@ -11,4 +11,7 @@ public class TestTagConstants {
     public static final String MENU = "Menu";
 
     public static final String MODAL_DIALOG = "ModalDialog";
+    public static final String DRAGGABLE = "Draggable";
+    public static final String DROPPABLE = "Droppable";
+
 }

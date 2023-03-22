@@ -20,7 +20,7 @@ public class Menu extends BaseTest {
         actions.moveToElement(driver.findElement(By.xpath("//li[contains(.,'Music')]")))
                 .moveToElement(driver.findElement(By.xpath("//li[contains(.,'Jazz')]")))
                 .moveToElement(driver.findElement(By.xpath("//li[contains(.,'Modern')]")))
-                .click().build();
+                .click().perform();
     }
 
 }
