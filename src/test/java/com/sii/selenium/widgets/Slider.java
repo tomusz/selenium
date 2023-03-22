@@ -23,7 +23,6 @@ public class Slider extends BaseTest {
         driver.get(sliderUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 
-
         SliderUtils.moveSliderTo(driver, 50);
         assertSlider(driver, 50);
         SliderUtils.moveSliderTo(driver, 80);
