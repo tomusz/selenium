@@ -6,8 +6,6 @@ import com.sii.selenium.utils.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Tooltip extends BaseTest {
 

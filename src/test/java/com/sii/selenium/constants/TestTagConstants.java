@@ -20,4 +20,6 @@ public class TestTagConstants {
     public static final String HIGH_SITE = "HighSite";
     public static final String PROGRESS_BAR = "ProgressBar";
     public static final String TOOLTIP = "Tooltip";
+    public static final String AUTO_COMPLETE = "AutoComplete";
+    public static final String ACCORDION = "Accordion";
 }
