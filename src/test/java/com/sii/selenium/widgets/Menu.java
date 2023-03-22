@@ -2,6 +2,7 @@ package com.sii.selenium.widgets;
 
 import com.sii.selenium.BaseTest;
 import com.sii.selenium.constants.TestTagConstants;
+import com.sii.selenium.utils.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -16,6 +17,8 @@ public class Menu extends BaseTest {
     @Tag("FAKE-JIRA-NO-0010")
     public void clickModern() {
         driver.get(menuUrl);
+        WebPageUtils.maximiseWindow.accept(driver);
+
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(By.xpath("//li[contains(.,'Music')]")))
                 .moveToElement(driver.findElement(By.xpath("//li[contains(.,'Jazz')]")))

@@ -3,14 +3,12 @@ package com.sii.selenium.other;
 import com.sii.selenium.BaseTest;
 import com.sii.selenium.constants.TestTagConstants;
 import com.sii.selenium.utils.WebPageUtils;
-import com.sii.selenium.utils.files.FileHandler;
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
-import java.io.File;
 
 public class HighSite extends BaseTest {
 
