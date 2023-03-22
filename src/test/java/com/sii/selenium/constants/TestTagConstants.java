@@ -22,4 +22,5 @@ public class TestTagConstants {
     public static final String TOOLTIP = "Tooltip";
     public static final String AUTO_COMPLETE = "AutoComplete";
     public static final String ACCORDION = "Accordion";
+    public static final String SLIDER = "Slider";
 }
