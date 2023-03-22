@@ -17,4 +17,5 @@ public class TestTagConstants {
     public static final String SELECTABLE = "Selectable";
     public static final String SORTABLE = "Sortable";
     public static final String RESIZEABLE = "Resizeable";
+    public static final String HIGH_SITE = "HighSite";
 }

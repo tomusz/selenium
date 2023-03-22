@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
 import java.util.Properties;
 
 public class BaseTest {
@@ -18,7 +19,7 @@ public class BaseTest {
 
     protected String baseUrl = webAddresses.get("baseUrl").toString();
 
-    protected static final int WAIT_TIME = 10;
+    protected static final Duration WAIT_TIME = Duration.ofSeconds(10);
 
     public BaseTest() {
     }

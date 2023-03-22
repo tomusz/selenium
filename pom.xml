@@ -13,7 +13,7 @@
         <logback.version>1.2.3</logback.version>
         <logback.jakcson.verion>0.1.5</logback.jakcson.verion>
         <logstash.version>6.4</logstash.version>
-        <selenium.version>4.0.0-alpha-1</selenium.version>
+        <selenium.version>4.8.1</selenium.version>
         <jupiter.version>5.7.1</jupiter.version>
         <hamcrest.version>2.2</hamcrest.version>
         <assertj.version>3.22.0</assertj.version>
@@ -106,6 +106,12 @@
             <artifactId>lombok</artifactId>
             <version>1.18.26</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
