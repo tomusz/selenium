@@ -15,6 +15,7 @@ public class ModalDialog extends BaseTest {
     public void addNewUser() {
         driver.get(modalDialogUrl);
         WebPageUtils.maximiseWindow.accept(driver);
+        //TODO:Not finished PLUS
 
 //        . Modal dialog (po czwartku)
 //• Click 'Create new user'

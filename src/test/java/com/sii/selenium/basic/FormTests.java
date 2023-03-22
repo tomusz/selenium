@@ -62,6 +62,7 @@ public class FormTests extends BaseTest {
         String expectedLabel = "Form send with success";
         assertThat(actualLabel).isEqualTo(expectedLabel);
 
+        //TODO:Not finished PLUS
         //Gratis to tego zadania dla osób chętnych:
         //•Poszukajcie jak ustawić domyślny folder pobierania w chromedriverze
         // •Ustawcie wybrany przez was folder
