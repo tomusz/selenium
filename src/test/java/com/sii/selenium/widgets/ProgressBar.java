@@ -2,6 +2,7 @@ package com.sii.selenium.widgets;
 
 import com.sii.selenium.BaseTest;
 import com.sii.selenium.constants.TestTagConstants;
+import com.sii.selenium.utils.WaitUtils;
 import com.sii.selenium.utils.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ public class ProgressBar extends BaseTest {
         driver.get(progressBarUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 
-        WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
+        WebDriverWait wait = new WebDriverWait(driver, WaitUtils.WAIT_TIME);
         wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.xpath("//div[contains(@class,'progress-label')]")), "Complete!"));
     }
 
@@ -31,7 +32,7 @@ public class ProgressBar extends BaseTest {
         driver.get(progressBarUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 
-        WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
+        WebDriverWait wait = new WebDriverWait(driver, WaitUtils.WAIT_TIME);
         wait.until(ExpectedConditions.attributeContains(driver.findElement(By.cssSelector("div.ui-progressbar-value")), "class","ui-progressbar-complete"));
     }
 }

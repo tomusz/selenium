@@ -1,6 +1,5 @@
 package com.sii.selenium.other;
 
-import com.beust.ah.A;
 import com.sii.selenium.BaseTest;
 import com.sii.selenium.constants.TestTagConstants;
 import com.sii.selenium.utils.WebPageUtils;
@@ -23,7 +22,7 @@ public class DemoQa extends BaseTest {
     @Test
     @Tag(TestTagConstants.FORMS)
     @Tag("FAKE-JIRA-NO-0025")
-    public void scrollWithJavaScript() {
+    public void fillInForm() {
         driver.get(demoQaWebPageUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 

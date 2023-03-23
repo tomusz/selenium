@@ -21,5 +21,4 @@ public class WebPageUtils {
         driver.close();
         driver.switchTo().window(baseWindow);
     }
-
 }

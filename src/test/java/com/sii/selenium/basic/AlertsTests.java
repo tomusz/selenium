@@ -2,6 +2,7 @@ package com.sii.selenium.basic;
 
 import com.sii.selenium.BaseTest;
 import com.sii.selenium.constants.TestTagConstants;
+import com.sii.selenium.utils.WaitUtils;
 import com.sii.selenium.utils.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -95,7 +96,7 @@ public class AlertsTests extends BaseTest {
 
         driver.findElement(By.cssSelector("#delayed-alert")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver, WAIT_TIME);
+        WebDriverWait wait = new WebDriverWait(driver, WaitUtils.WAIT_TIME);
         wait.until(ExpectedConditions.alertIsPresent());
 
         driver.switchTo().alert().accept();

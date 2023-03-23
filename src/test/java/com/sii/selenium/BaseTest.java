@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.time.Duration;
 import java.util.Properties;
 
 public class BaseTest {
@@ -18,8 +17,6 @@ public class BaseTest {
     protected Properties webAddresses = PropertiesProvider.getWebAddresses();
 
     protected String baseUrl = webAddresses.get("baseUrl").toString();
-
-    protected static final Duration WAIT_TIME = Duration.ofSeconds(10);
 
     public BaseTest() {
     }
@@ -38,6 +35,5 @@ public class BaseTest {
     void setupDriver() {
         ChromeOptions options = new ChromeOptions().addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
-//        driver.manage().timeouts().implicitlyWait(WAIT_TIME, TimeUnit.SECONDS);
     }
 }
