@@ -3,11 +3,12 @@ package com.sii.selenium.other;
 import com.sii.selenium.BaseTest;
 import com.sii.selenium.constants.TestTagConstants;
 import com.sii.selenium.utils.WebPageUtils;
+import com.sii.selenium.utils.files.FileHandler;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.interactions.Actions;
 
 public class HighSite extends BaseTest {
@@ -21,12 +22,8 @@ public class HighSite extends BaseTest {
         driver.get(highSiteWebPageUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 
-        WebElement scrollButton = driver.findElement(By.id("scroll-button"));
-
-        scrollUntilVisibleJS(scrollButton);
-        System.out.println("stop");
-//        FileHandler.makeAScreenShot(driver);
-        //TODO:need to finish
+        scrollUntilVisibleJS();
+        FileHandler.makeAScreenShot(driver);
     }
 
     @Test
@@ -36,32 +33,33 @@ public class HighSite extends BaseTest {
         driver.get(highSiteWebPageUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 
-
-        WebElement scrollButton = driver.findElement(By.cssSelector("#scroll-button"));
-
-        scrollUntilVisibleJS(scrollButton);
-//        FileHandler.makeAScreenShot(driver);
-        System.out.println("stop");
-
-
-        //TODO:need to finish
+        scrollUntilElementVisible();
+        FileHandler.makeAScreenShot(driver);
     }
 
-    private void scrollUntilVisibleJS(WebElement element) {
+    private void scrollUntilVisibleJS() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
+        while (true) {
+            js.executeScript("window.scrollBy(0,100)", "");
+            try {
+                driver.findElement(By.cssSelector("#scroll-button")).click();
+                break;
+            } catch (NoSuchElementException e) {
 
-        while (!element.isEnabled()) {
-            js.executeScript("window.scrollBy(0,100)");
+            }
         }
     }
 
-    private void scrollUntilElementVisible(WebElement element) {
+    private void scrollUntilElementVisible() {
         Actions actions = new Actions(driver);
-        while (!element.isEnabled()) {
-            actions.scrollByAmount(100,0);
+        while (true) {
+            actions.scrollByAmount(0, 100).perform();
+            try {
+                driver.findElement(By.cssSelector("#scroll-button")).click();
+                break;
+            } catch (NoSuchElementException e) {
+            }
         }
     }
-
-
 }
