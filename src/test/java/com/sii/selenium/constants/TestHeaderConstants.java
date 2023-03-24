@@ -13,9 +13,4 @@ public enum TestHeaderConstants {
         this.xpath = xpath;
         this.name = name;
     }
-
-    //    public static final String TABLE_MOUNTAIN_RANGE_HEADER = "Mountain range";
-//    public static final String TABLE_STATE_HEADER = "State";
-//    public static final String TABLE_HEIGHT_HEADER = "Height";
-
 }

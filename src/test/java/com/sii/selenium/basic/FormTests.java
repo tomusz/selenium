@@ -61,17 +61,5 @@ public class FormTests extends BaseTest {
         String actualLabel = driver.findElement(By.cssSelector("#validator-message")).getText();
         String expectedLabel = "Form send with success";
         assertThat(actualLabel).isEqualTo(expectedLabel);
-
-        //TODO:Not finished PLUS
-        //Gratis to tego zadania dla osób chętnych:
-        //•Poszukajcie jak ustawić domyślny folder pobierania w chromedriverze
-        // •Ustawcie wybrany przez was folder
-        //•'Policzcie' przy pomocy javy jaka jest ilość plików w tym folderze
-        // •kliknijcie w formularzu przycisk 'Test File to Download'
-        //•Sprawdźcie czy ilość plików w folderze jest taka jak wcześniej +1
-        // •Dla chętnych: możecie spróbować
-        // pobrać listę plików w danym folderze i sprawdzić czy zawiera ona ten plik test-file-todownload.xlsx
-
     }
-
 }
