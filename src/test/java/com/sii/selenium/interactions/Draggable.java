@@ -21,76 +21,24 @@ public class Draggable extends BaseTest {
         WebPageUtils.maximiseWindow.accept(driver);
 
         WebElement draggable = driver.findElement(By.id("draggable"));
-        //default upper left corner
-        // 150
 
-        System.out.println("300 and 300");
-//                .dragAndDropBy(draggable,300,300)
-        System.out.println("W : " +
-                (driver.manage().window().getSize().getWidth() -
-                draggable.getSize().getWidth()/2 - draggable.getLocation().getX()));
-        System.out.println("H : " + (driver.manage().window().getSize().getHeight() - draggable.getSize().getHeight()/2
-                - draggable.getLocation().getY()));
+        int windowWidth = driver.manage().window().getSize().getWidth();
+        int windowHeight = driver.manage().window().getSize().getHeight();
+        int elementWidth = draggable.getSize().getWidth();
+        int elementHeight = draggable.getSize().getHeight();
+        int elementLocationX = draggable.getLocation().x;
+        int elementLocationY = draggable.getLocation().y;
 
-        System.out.println("after W - size/2 - location");
-        //TODO:Not finished
-        //3456 - 1175 - 150 //browser - position - object
-        // - position
-        dragObject(draggable, driver.manage().window().getSize().getWidth() - draggable.getLocation().getX()
-                        - draggable.getSize().getWidth(),
-                -draggable.getLocation().getY());
-        WebElement draggableRightTop = driver.findElement(By.id("draggable"));
-
-        System.out.println("X obj " + draggableRightTop.getLocation().getX());
-        System.out.println("Y obj " + draggableRightTop.getLocation().getY());
-
-        System.out.println("Width obj " + draggableRightTop.getSize().getWidth()); //75
-        System.out.println("Height obj " + draggableRightTop.getSize().getHeight()); //75
-
-        System.out.println("Height web " + driver.manage().window().getSize().getHeight());
-        System.out.println("Width web " + driver.manage().window().getSize().getWidth());
-
-
-        dragObject(draggableRightTop, 0,
-                driver.manage().window().getSize().getHeight() - draggableRightTop.getSize().getHeight()/2
-        - draggableRightTop.getLocation().getY());
-        WebElement draggableRightBottom = driver.findElement(By.id("draggable"));
-
-        System.out.println("X obj " + draggableRightBottom.getLocation().getX());
-        System.out.println("Y obj " + draggableRightBottom.getLocation().getY());
-
-        System.out.println("Width obj " + draggableRightBottom.getSize().getWidth()); //75
-        System.out.println("Height obj " + draggableRightBottom.getSize().getHeight()); //75
-
-        System.out.println("Height web " + driver.manage().window().getSize().getHeight());
-        System.out.println("Width web " + driver.manage().window().getSize().getWidth());
-
-//        dragObject(draggableRightBottom, );
-        // 0
-        // window - obj/2 - pos
-
-        //- brow w/2 + sizew/2
-        // - brow h/2 + sizew/2
-
-        // left bot
-        // brow - pos
-        // brow - pos
-//        dragObject(draggable,300,300);
-
-//        System.out.println("0 and 0");
-//        dragObject(draggable, 0,0);
-//
-//        System.out.println("widt and heit");
-//        dragObject(draggable,driver.manage().window().getSize().getWidth(),
-//                driver.manage().window().getSize().getHeight());
-//        System.out.println();
-    }
-
-    private void dragObject(WebElement element, int distanceX, int distanceY) {
         Actions actions = new Actions(driver);
-        actions.clickAndHold(element).moveByOffset(distanceX,distanceY)
-                .release().perform();
+        actions.dragAndDropBy(draggable, (windowWidth - elementWidth - elementLocationX), elementLocationY).perform();
+
+        //not working do not know why???
+        actions.dragAndDropBy(draggable, 0, windowHeight - elementLocationY - elementHeight / 2).perform();
+
+        actions.dragAndDropBy(draggable, -(windowWidth / 2 - elementWidth / 2), -(windowHeight / 2 - elementHeight / 2))
+                .perform();
+
+        actions.dragAndDropBy(draggable, -(windowWidth / 2 - elementWidth / 2), (windowHeight / 2 - elementHeight / 2))
+                .perform();
     }
-
-
 }

@@ -6,11 +6,7 @@ import com.sii.selenium.utils.WebPageUtils;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.Interaction;
-
-import java.util.Collections;
 
 public class Resizable extends BaseTest {
 
@@ -23,16 +19,11 @@ public class Resizable extends BaseTest {
         driver.get(resizeableWebPageUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 
-        WebElement resizable = driver.findElement(By.id("resizable"));
-        int resizibleY = resizable.getLocation().getY();
-        int resizibleX = resizable.getLocation().getX();
-
-
         Actions actions = new Actions(driver);
-//        actions
 
-
-        //TODO:need to finish
+        actions.dragAndDropBy(driver.findElement(By.cssSelector(".ui-resizable-e")), 10, 0).perform();
+        actions.dragAndDropBy(driver.findElement(By.cssSelector(".ui-resizable-s")), 0, 10).perform();
+        actions.dragAndDropBy(driver.findElement(By.cssSelector(".ui-resizable-se")), 10, 10).perform();
     }
 
 }
