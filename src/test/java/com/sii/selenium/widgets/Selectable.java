@@ -21,21 +21,21 @@ public class Selectable extends BaseTest {
         driver.get(selectWebPageUrl);
         WebPageUtils.maximiseWindow.accept(driver);
 
-        Select speed = new Select(driver.findElement(By.cssSelector("#speed-menu")));
+        Select speed = new Select(driver.findElement(By.cssSelector("#speed")));
         speed.getWrappedElement().sendKeys(Keys.SPACE);
         speed.selectByIndex(ArithmeticUtils.getRandomNumberInRange(1, speed.getOptions().size()));
 
-        Select files = new Select(driver.findElement(By.cssSelector("#files-menu")));
+        Select files = new Select(driver.findElement(By.cssSelector("#files")));
         files.getWrappedElement().click();
         files.selectByVisibleText("Select a file");
 
-        Select number = new Select(driver.findElement(By.cssSelector("#number-menu")));
+        Select number = new Select(driver.findElement(By.cssSelector("#number")));
         number.getWrappedElement().click();
         number.selectByIndex(10);
 
-        Select salutation = new Select(driver.findElement(By.cssSelector("#salutation-menu")));
+        Select salutation = new Select(driver.findElement(By.cssSelector("#salutation")));
         salutation.getWrappedElement().click();
-        salutation.selectByIndex(ArithmeticUtils.getRandomNumberInRange(1, salutation.getOptions().size()));
+        salutation.selectByIndex(ArithmeticUtils.getRandomNumberInRange(1, salutation.getOptions().size() - 1));
     }
 
 }
